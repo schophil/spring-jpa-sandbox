@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: ${CURRENT_ENVIRONMENT:local}
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+    enabled: true
+  datasource:
+    url: jdbc:tc:postgresql:15:///counterdb;LOCK_TIMEOUT=0
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
